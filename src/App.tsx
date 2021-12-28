@@ -1,4 +1,4 @@
-import { Navegation } from './routes/Navegation';
+import { Navegation } from './routers/Navegation';
 
 function App() {
   return (
