@@ -8,12 +8,17 @@ import { ProductContext } from './ProductCard';
 //     //cosejo: si no sabes que variable le corresponde a cada parametro que recibes es recomendable hacer cursorpointer en la variable original para ver que retorna
 // }
 
-export  const ProductButtons =()=>{
+export interface Props {
+    className?: string;
+    style?: React.CSSProperties;
+}
+
+export  const ProductButtons =({className,style}: Props)=>{
     // { counter, increaseBy }: ProductButtonsProps estas eran las dependencias antes del context
     const { increaseBy, counter } = useContext(ProductContext);
 
     return(
-        <div className={ styles.buttonsContainer }>
+        <div className={ `${styles.buttonsContainer} ${className}` } style={ style }>
             <button className={ styles.buttonMinus }
             onClick={()=> increaseBy(-1)}
             >-</button>
